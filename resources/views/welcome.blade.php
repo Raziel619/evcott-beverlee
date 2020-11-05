@@ -9,6 +9,11 @@
                         <h1 class="text-white">{{ __('Welcome to Beverlee') }}</h1>
                     </div>
                 </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 col-md-6">
+                    <a href="{{route('readings.index')}}" class="btn btn-success mt-4 text-white">View Sample Readings</a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="separator separator-bottom separator-skew zindex-100">

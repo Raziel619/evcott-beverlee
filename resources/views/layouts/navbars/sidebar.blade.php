@@ -5,7 +5,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Brand -->
-        <a class="navbar-brand pt-0" href="{{ route('home') }}">
+        <a class="navbar-brand pt-0" href="{{ route('/') }}">
             <h1 class="text-blue">{{ __('Beverlee') }}</h1>
         </a>
         <!-- User -->
