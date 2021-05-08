@@ -6,7 +6,7 @@
         <div class="header-body text-center mt-4 mb-7">
             <div class="row justify-content-center mb-3">
                 <div class="col-lg-5 col-md-6">
-                    <h1 class="text-white">{{ __('Sample Readings') }}</h1>
+                    <h1 class="text-white">{{ __('Hyundai Ioniq EV Data') }}</h1>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -18,7 +18,7 @@
                                 <button class="btn btn-link" data-toggle="collapse"
                                     data-target="#collapse{{$reading->id}}" aria-expanded="true"
                                     aria-controls="collapse{{$reading->id}}">
-                                    ID: {{$reading->id}} | Time: {{$reading->time}}
+                                    ID: {{$reading->id}} | Time: {{$reading->time}} | SOC: {{$reading->soc}} %
                                 </button>
                             </h5>
                         </div>
@@ -35,6 +35,12 @@
                                 <p>{{$reading->cmd_2104}}</p>
                                 <p><strong>CMD_2105</strong></p>
                                 <p>{{$reading->cmd_2105}}</p>
+                                <p><strong>Auxilary Battery Voltage</strong></p>
+                                <p>{{$reading->bat_voltage}} V</p>
+                                <p><strong>SOC</strong></p>
+                                <p>{{$reading->soc}} %</p>
+                                <p><strong>RPM</strong></p>
+                                <p>{{$reading->rpm}}</p>
                             </div>
                         </div>
                     </div>
