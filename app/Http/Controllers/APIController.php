@@ -10,18 +10,24 @@ use App\Models\Reading;
 class APIController extends Controller
 {
     public function postReading(Request $request){
+        //Temp Data Storage for Processing
+        $dx_2101=$request->input('cmd_2101');
+        $dx_2102=$request->input('cmd_2102');
+        $dx_2103=$request->input('cmd_2103');
+        $dx_2104=$request->input('cmd_2104');
+        $dx_2105=$request->input('cmd_2105');
 
         //Process SOC Data
-        $dx_2105 = $request->input('cmd_2105');
-        if(strpos($dx_2105,"7EC 24") === FALSE){$dx_2105= "N/A";}
-        else{$dx_2105= hexdec(substr($dx_2105,(strpos($dx_2105,"7EC 24")+25),2)) / 2 ;}
-        $request->merge(["soc"=>$dx_2105]);
+        $var= $dx_2105;
+        if(strpos($var,"7EC 24") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 24")+25),2)) / 2 ;}
+        $request->merge(["soc"=>$var]);
 
         //Process RPM Data
-        $dx_2101 = $request->input('cmd_2101');
-        if(strpos($dx_2101,"7EC 28") === FALSE){$dx_2101= "N/A";}
-        else{$dx_2101= hexdec(substr($dx_2101,(strpos($dx_2101,"7EC 28")+7),2).substr($dx_2101,(strpos($dx_2101,"7EC 28")+10),2));}
-        $request->merge(["rpm"=>$dx_2101]);
+        $var= $dx_2101;
+        if(strpos($var,"7EC 28") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 28")+7),2).substr($var,(strpos($var,"7EC 28")+10),2));}
+        $request->merge(["rpm"=>$var]);
         //$data = $request->all();
 
         $data = $request->validate([
