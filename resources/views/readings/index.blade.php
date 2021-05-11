@@ -57,6 +57,8 @@
                                 <p>{{$reading->BatTmpMI}} &degC</p>
                                 <p><strong>Battery Module 1 Temperature</strong></p>
                                 <p>{{$reading->bmt1}} &degC</p>
+                                <p><strong>Battery Module 2 Temperature</strong></p>
+                                <p>{{$reading->bmt2}} &degC</p>
 
                             </div>
                         </div>
