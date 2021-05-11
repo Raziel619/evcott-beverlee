@@ -53,6 +53,8 @@
                                 <p>{{$reading->battery_voltage}} V</p>
                                 <p><strong>Battery Max Temperature</strong></p>
                                 <p>{{$reading->BatTmpMX}} &degC</p>
+                                <p><strong>Battery Min Temperature</strong></p>
+                                <p>{{$reading->BatTmpMI}} &degC</p>
                             </div>
                         </div>
                     </div>
