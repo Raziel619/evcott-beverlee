@@ -37,8 +37,10 @@
                                 <p>{{$reading->cmd_2105}}</p>
                                 <p><strong>Auxilary Battery Voltage</strong></p>
                                 <p>{{$reading->bat_voltage}} V</p>
-                                <p><strong>SOC</strong></p>
+                                <p><strong>SOC (Dashboard)</strong></p>
                                 <p>{{$reading->soc}} %</p>
+                                <p><strong>SOC(BMS)</strong></p>
+                                <p>{{$reading->soc_bms}} %</p>
                                 <p><strong>RPM</strong></p>
                                 <p>{{$reading->rpm}}</p>
                             </div>

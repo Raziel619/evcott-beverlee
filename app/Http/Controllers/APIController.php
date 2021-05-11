@@ -28,6 +28,14 @@ class APIController extends Controller
         if(strpos($var,"7EC 28") === FALSE){$var= "N/A";}
         else{$var= hexdec(substr($var,(strpos($var,"7EC 28")+7),2).substr($var,(strpos($var,"7EC 28")+10),2));}
         $request->merge(["rpm"=>$var]);
+
+        //Process SOC(BMS) Data
+        $var= $dx_2101;
+        if(strpos($var,"7EC 21") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 21")+7),2)) / 2 ;}
+        $request->merge(["soc_bms"=>$var]);
+
+
         //$data = $request->all();
 
         $data = $request->validate([
@@ -40,6 +48,7 @@ class APIController extends Controller
             'cmd_2105' => 'required',
             'soc' => 'required',
             'rpm' => 'required',
+            'soc_bms' => 'required',
         ]);
         
         $reading = new Reading;
