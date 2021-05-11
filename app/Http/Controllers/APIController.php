@@ -65,6 +65,12 @@ class APIController extends Controller
         else{$var= hexdec(substr($var,(strpos($var,"7EC 22")+10),2).substr($var,(strpos($var,"7EC 22")+13),2))/10;}
         $request->merge(["battery_voltage"=>$var]);
 
+        //Process Battery Max Temp Data
+        $var= $dx_2101;
+        if(strpos($var,"7EC 22") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 22")+16),2));}
+        $request->merge(["BatTmpMX"=>$var]);
+
         //$data = $request->all();
 
         $data = $request->validate([
@@ -82,6 +88,7 @@ class APIController extends Controller
             'adp' => 'required',
             'battery_current' => 'required',
             'battery_voltage' => 'required',
+            'BatTmpMX' => 'required',
         ]);
         
         $reading = new Reading;

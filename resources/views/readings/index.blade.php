@@ -51,6 +51,8 @@
                                 <p>{{$reading->battery_current}} A</p>
                                 <p><strong>Battery Pack Voltage</strong></p>
                                 <p>{{$reading->battery_voltage}} V</p>
+                                <p><strong>Battery Max Temperature</strong></p>
+                                <p>{{$reading->BatTmpMX}} &degC</p>
                             </div>
                         </div>
                     </div>
