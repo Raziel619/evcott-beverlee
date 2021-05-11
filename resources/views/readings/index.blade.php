@@ -45,6 +45,8 @@
                                 <p>{{$reading->rpm}}</p>
                                 <p><strong>Available Charge Power</strong></p>
                                 <p>{{$reading->acp}} kW</p>
+                                <p><strong>Available Discharge Power</strong></p>
+                                <p>{{$reading->adp}} kW</p>
                             </div>
                         </div>
                     </div>

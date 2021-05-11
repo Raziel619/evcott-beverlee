@@ -41,6 +41,12 @@ class APIController extends Controller
         else{$var= hexdec(substr($var,(strpos($var,"7EC 21")+10),2).substr($var,(strpos($var,"7EC 21")+13),2))/100;}
         $request->merge(["acp"=>$var]);
 
+        //Process Available Discharge Power Data
+        // $var= $dx_2101;
+        // if(strpos($var,"7EC 21") === FALSE){$var= "N/A";}
+        // else{$var= hexdec(substr($var,(strpos($var,"7EC 21")+16),2).substr($var,(strpos($var,"7EC 21")+19),2))/100;}
+        $request->merge(["adp"=>$var]);
+
 
         //$data = $request->all();
 
@@ -56,6 +62,7 @@ class APIController extends Controller
             'rpm' => 'required',
             'soc_bms' => 'required',
             'acp' => 'required',
+            'adp' => 'required',
         ]);
         
         $reading = new Reading;
