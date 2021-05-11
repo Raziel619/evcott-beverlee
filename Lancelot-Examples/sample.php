@@ -69,8 +69,10 @@ echo "RPM = ". hexdec(substr($txt4,855,2) . substr($txt4,858,2)). "<br>";
 // $var= hexdec(substr($txt5,(strpos($txt5,"7EC 21")+10),2).substr($txt5,(strpos($txt5,"7EC 21")+13),2))/100;
 // echo "Available Charge Power = ".$var. "<br>";
 
-echo substr($txt5,(strpos($txt5,"7EC 21")+16),2).substr($txt5,(strpos($txt5,"7EC 21")+19),2)."<br>";
-$var= hexdec(substr($txt5,(strpos($txt5,"7EC 21")+16),2).substr($txt5,(strpos($txt5,"7EC 21")+19),2))/100;
-echo "Available Discharge Power = ".$var. "<br>";
+echo substr($txt5,(strpos($txt5,"7EC 21")+25),2).substr($txt5,(strpos($txt5,"7EC 22")+7),2)."<br>";
+$var= hexdec(substr($txt5,(strpos($txt5,"7EC 21")+25),2).substr($txt5,(strpos($txt5,"7EC 22")+7),2))/10;
+echo "Battery Current = ".$var. "<br>";
+
+
 
 ?>

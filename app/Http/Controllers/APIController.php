@@ -42,11 +42,22 @@ class APIController extends Controller
         $request->merge(["acp"=>$var]);
 
         //Process Available Discharge Power Data
-        // $var= $dx_2101;
-        // if(strpos($var,"7EC 21") === FALSE){$var= "N/A";}
-        // else{$var= hexdec(substr($var,(strpos($var,"7EC 21")+16),2).substr($var,(strpos($var,"7EC 21")+19),2))/100;}
+        $var= $dx_2101;
+        if(strpos($var,"7EC 21") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 21")+16),2).substr($var,(strpos($var,"7EC 21")+19),2))/100;}
         $request->merge(["adp"=>$var]);
 
+        //Process Battery Current Data
+        $var= $dx_2101;
+        if(strpos($var,"7EC 21") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 21")+16),2).substr($var,(strpos($var,"7EC 21")+19),2))/100;}
+        $request->merge(["adp"=>$var]);
+
+        //Process Battery Current Data
+        $var= $dx_2101;
+        if(strpos($var,"7EC 21") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 21")+25),2).substr($var,(strpos($var,"7EC 22")+7),2))/10;}
+        $request->merge(["battery_current"=>$var]);
 
         //$data = $request->all();
 
@@ -63,6 +74,7 @@ class APIController extends Controller
             'soc_bms' => 'required',
             'acp' => 'required',
             'adp' => 'required',
+            'battery_current' => 'required',
         ]);
         
         $reading = new Reading;

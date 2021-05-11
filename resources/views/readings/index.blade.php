@@ -47,6 +47,8 @@
                                 <p>{{$reading->acp}} kW</p>
                                 <p><strong>Available Discharge Power</strong></p>
                                 <p>{{$reading->adp}} kW</p>
+                                <p><strong>Battery Current</strong></p>
+                                <p>{{$reading->battery_current}} A</p>
                             </div>
                         </div>
                     </div>
