@@ -49,6 +49,8 @@
                                 <p>{{$reading->adp}} kW</p>
                                 <p><strong>Battery Current</strong></p>
                                 <p>{{$reading->battery_current}} A</p>
+                                <p><strong>Battery Pack Voltage</strong></p>
+                                <p>{{$reading->battery_voltage}} V</p>
                             </div>
                         </div>
                     </div>
