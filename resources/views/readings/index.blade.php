@@ -61,6 +61,8 @@
                                 <p>{{$reading->bmt2}} &degC</p>
                                 <p><strong>Battery Module 3 Temperature</strong></p>
                                 <p>{{$reading->bmt3}} &degC</p>
+                                <p><strong>Battery Module 4 Temperature</strong></p>
+                                <p>{{$reading->bmt4}} &degC</p>
 
                             </div>
                         </div>

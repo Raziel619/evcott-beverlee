@@ -95,6 +95,11 @@ class APIController extends Controller
         else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+7),2));}
         $request->merge(["bmt3"=>$var]);
 
+        //Process Battery Module 4 Temp Data
+        $var= $dx_2101;
+        if(strpos($var,"7EC 23") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+10),2));}
+        $request->merge(["bmt4"=>$var]);
 
         //$data = $request->all();
 
@@ -118,6 +123,7 @@ class APIController extends Controller
             'bmt1' => 'required',
             'bmt2' => 'required',
             'bmt3' => 'required',
+            'bmt4' => 'required',
         ]);
         
         $reading = new Reading;
