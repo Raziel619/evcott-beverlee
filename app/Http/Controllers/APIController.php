@@ -35,6 +35,12 @@ class APIController extends Controller
         else{$var= hexdec(substr($var,(strpos($var,"7EC 21")+7),2)) / 2 ;}
         $request->merge(["soc_bms"=>$var]);
 
+        //Process Available Charge Power Data
+        $var= $dx_2101;
+        if(strpos($var,"7EC 21") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 21")+10),2).substr($var,(strpos($var,"7EC 21")+13),2))/100;}
+        $request->merge(["acp"=>$var]);
+
 
         //$data = $request->all();
 
@@ -49,6 +55,7 @@ class APIController extends Controller
             'soc' => 'required',
             'rpm' => 'required',
             'soc_bms' => 'required',
+            'acp' => 'required',
         ]);
         
         $reading = new Reading;

@@ -43,6 +43,8 @@
                                 <p>{{$reading->soc_bms}} %</p>
                                 <p><strong>RPM</strong></p>
                                 <p>{{$reading->rpm}}</p>
+                                <p><strong>Available Charge Power</strong></p>
+                                <p>{{$reading->acp}} kW</p>
                             </div>
                         </div>
                     </div>

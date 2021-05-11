@@ -61,8 +61,12 @@ echo "RPM = ". hexdec(substr($txt4,855,2) . substr($txt4,858,2)). "<br>";
 // 		echo "SOC = ". hexdec(substr($txt5,243,2)) / 2 . " %". "<br>";
 // 	}
 
-echo substr($txt5,(strpos($txt5,"7EC 21")+7),2)."<br>";
-$var= hexdec(substr($txt5,(strpos($txt5,"7EC 21")+7),2)) / 2 ;
-echo "SOC (BMS) = ".$var. "<br>";
+// echo substr($txt5,(strpos($txt5,"7EC 21")+7),2)."<br>";
+// $var= hexdec(substr($txt5,(strpos($txt5,"7EC 21")+7),2)) / 2 ;
+// echo "SOC (BMS) = ".$var. "<br>";
+
+//echo substr($txt5,(strpos($txt5,"7EC 21")+10),2).substr($txt5,(strpos($txt5,"7EC 21")+13),2)."<br>";
+$var= hexdec(substr($txt5,(strpos($txt5,"7EC 21")+10),2).substr($txt5,(strpos($txt5,"7EC 21")+13),2))/100;
+echo "Available Charge Power = ".$var. "<br>";
 
 ?>
