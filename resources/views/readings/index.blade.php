@@ -75,7 +75,8 @@
                                 <p>{{$reading->MXCVno}} </p>
                                 <p><strong>Minimum Cell Voltage No.</strong></p>
                                 <p>{{$reading->MICVno}} </p>
-
+                                <p><strong>Fan Status | On=1 Off=0 </strong></p>
+                                <p>{{$reading->fan_status}} </p>
 
                             </div>
                         </div>
