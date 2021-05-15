@@ -69,6 +69,8 @@
                                 <p>{{$reading->BatTmpIN}} &degC</p>
                                 <p><strong>Maximum Cell Voltage</strong></p>
                                 <p>{{$reading->MXCV}} V</p>
+                                <p><strong>Minimum Cell Voltage</strong></p>
+                                <p>{{$reading->MICV}} V</p>
 
                             </div>
                         </div>
