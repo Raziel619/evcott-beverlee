@@ -67,6 +67,8 @@
                                 <p>{{$reading->bmt5}} &degC</p>
                                 <p><strong>Battery Inlet Temperature</strong></p>
                                 <p>{{$reading->BatTmpIN}} &degC</p>
+                                <p><strong>Maximum Cell Voltage</strong></p>
+                                <p>{{$reading->MXCV}} V</p>
 
                             </div>
                         </div>

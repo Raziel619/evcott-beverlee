@@ -113,6 +113,12 @@ class APIController extends Controller
         else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+19),2));}
         $request->merge(["BatTmpIN"=>$var]);
 
+        //Process Maximum Cell Voltage Data
+        $var= $dx_2101;
+        if(strpos($var,"7EC 23") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+22),2))/50;}
+        $request->merge(["MXCV"=>$var]);
+
         //$data = $request->all();
 
         $data = $request->validate([
@@ -138,6 +144,7 @@ class APIController extends Controller
             'bmt4' => 'required',
             'bmt5' => 'required',
             'BatTmpIN' => 'required',
+            'MXCV' => 'required',
         ]);
         
         $reading = new Reading;
