@@ -65,6 +65,8 @@
                                 <p>{{$reading->bmt4}} &degC</p>
                                 <p><strong>Battery Module 5 Temperature</strong></p>
                                 <p>{{$reading->bmt5}} &degC</p>
+                                <p><strong>Battery Inlet Temperature</strong></p>
+                                <p>{{$reading->BatTmpIN}} &degC</p>
 
                             </div>
                         </div>

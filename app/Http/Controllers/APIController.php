@@ -107,6 +107,12 @@ class APIController extends Controller
         else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+13),2));}
         $request->merge(["bmt5"=>$var]);
 
+        //Process Battery Inlet Temp Data
+        $var= $dx_2101;
+        if(strpos($var,"7EC 23") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+19),2));}
+        $request->merge(["BatTmpIN"=>$var]);
+
         //$data = $request->all();
 
         $data = $request->validate([
@@ -131,6 +137,7 @@ class APIController extends Controller
             'bmt3' => 'required',
             'bmt4' => 'required',
             'bmt5' => 'required',
+            'BatTmpIN' => 'required',
         ]);
         
         $reading = new Reading;
