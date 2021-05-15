@@ -71,6 +71,9 @@
                                 <p>{{$reading->MXCV}} V</p>
                                 <p><strong>Minimum Cell Voltage</strong></p>
                                 <p>{{$reading->MICV}} V</p>
+                                <p><strong>Maximum Cell Voltage No.</strong></p>
+                                <p>{{$reading->MXCVno}} </p>
+
 
                             </div>
                         </div>
