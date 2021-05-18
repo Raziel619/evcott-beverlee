@@ -77,7 +77,8 @@
                                 <p>{{$reading->MICVno}} </p>
                                 <p><strong>Fan Status | On=1 Off=0 </strong></p>
                                 <p>{{$reading->fan_status}} </p>
-
+                                <p><strong>Fan Feedback Signal | On=1 Off=0 </strong></p>
+                                <p>{{$reading->fan_fbsignal}} </p>
                             </div>
                         </div>
                     </div>

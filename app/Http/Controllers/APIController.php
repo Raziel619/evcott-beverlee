@@ -143,6 +143,12 @@ class APIController extends Controller
         else{$var=hexdec(substr($var,(strpos($var,"7EC 24")+13),2));}
         $request->merge(["fan_status"=>$var]);
 
+        //Process Fan Feedback Signal Data
+        $var= $dx_2101;
+        if(strpos($var,"7EC 24") === FALSE){$var= "N/A";}
+        else{$var=hexdec(substr($var,(strpos($var,"7EC 24")+16),2));}
+        $request->merge(["fan_fbsignal"=>$var]);
+
         //$data = $request->all();
 
         $data = $request->validate([
@@ -173,6 +179,7 @@ class APIController extends Controller
             'MXCVno' => 'required',
             'MICVno' => 'required',
             'fan_status' => 'required',
+            'fan_fbsignal' => 'required',
         ]);
         
         $reading = new Reading;
