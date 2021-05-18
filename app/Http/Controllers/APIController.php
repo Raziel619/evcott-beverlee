@@ -149,6 +149,12 @@ class APIController extends Controller
         else{$var=hexdec(substr($var,(strpos($var,"7EC 24")+16),2));}
         $request->merge(["fan_fbsignal"=>$var]);
 
+        //Process Auxillary Battery Voltage via OBDII Data
+        $var= $dx_2101;
+        if(strpos($var,"7EC 24") === FALSE){$var= "N/A";}
+        else{$var=hexdec(substr($var,(strpos($var,"7EC 24")+19),2))/10;}
+        $request->merge(["obdabv"=>$var]);
+
         //$data = $request->all();
 
         $data = $request->validate([
@@ -180,6 +186,7 @@ class APIController extends Controller
             'MICVno' => 'required',
             'fan_status' => 'required',
             'fan_fbsignal' => 'required',
+            'obdabv' => 'required',
         ]);
         
         $reading = new Reading;

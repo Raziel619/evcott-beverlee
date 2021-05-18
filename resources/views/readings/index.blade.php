@@ -79,6 +79,8 @@
                                 <p>{{$reading->fan_status}} </p>
                                 <p><strong>Fan Feedback Signal | On=1 Off=0 </strong></p>
                                 <p>{{$reading->fan_fbsignal}} </p>
+                                <p><strong>Auxilliary Battery Voltage (OBDII) </strong></p>
+                                <p>{{$reading->obdabv}} V</p>
                             </div>
                         </div>
                     </div>
