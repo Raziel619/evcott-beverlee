@@ -87,6 +87,8 @@
                                 <p>{{$reading->cdc}} Ah</p>
                                 <p><strong>Cumulative Charge Power </strong></p>
                                 <p>{{$reading->ccp}} kWh</p>
+                                <p><strong>Cumulative Discharge Power </strong></p>
+                                <p>{{$reading->cdp}} kWh</p>
                             </div>
                         </div>
                     </div>
