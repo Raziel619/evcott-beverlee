@@ -161,6 +161,12 @@ class APIController extends Controller
         else{$var= hexdec(substr($var,(strpos($var,"7EC 24")+22),2).substr($var,(strpos($var,"7EC 24")+25),2).substr($var,(strpos($var,"7EC 25")+7),2).substr($var,(strpos($var,"7EC 25")+10),2))/10;}
         $request->merge(["ccc"=>$var]);
 
+        //Process Cumulative Discharge Current
+        $var= $dx_2101;
+        if(strpos($var,"7EC 25") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 25")+13),2).substr($var,(strpos($var,"7EC 25")+16),2).substr($var,(strpos($var,"7EC 25")+19),2).substr($var,(strpos($var,"7EC 25")+22),2))/10;}
+        $request->merge(["cdc"=>$var]);
+
         //$data = $request->all();
 
         $data = $request->validate([
@@ -194,6 +200,7 @@ class APIController extends Controller
             'fan_fbsignal' => 'required',
             'obdabv' => 'required',
             'ccc' => 'required',
+            'cdc' => 'required',
 
         ]);
         

@@ -83,6 +83,8 @@
                                 <p>{{$reading->obdabv}} V</p>
                                 <p><strong>Cumulative Charge Current </strong></p>
                                 <p>{{$reading->ccc}} Ah</p>
+                                <p><strong>Cumulative Discharge Current </strong></p>
+                                <p>{{$reading->cdc}} Ah</p>
                             </div>
                         </div>
                     </div>
