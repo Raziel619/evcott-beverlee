@@ -185,6 +185,12 @@ class APIController extends Controller
         else{$var= hexdec(substr($var,(strpos($var,"7EC 27")+7),2).substr($var,(strpos($var,"7EC 27")+10),2).substr($var,(strpos($var,"7EC 27")+13),2).substr($var,(strpos($var,"7EC 27")+16),2))/86400;}
         $request->merge(["cot"=>number_format($var,2, '.', ',')]);
 
+        //Process Inverter Capacitor Voltage
+        $var= $dx_2101;
+        if(strpos($var,"7EC 27") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 27")+22),2).substr($var,(strpos($var,"7EC 27")+25),2))/1;}
+        $request->merge(["icv"=>$var]);
+
         //$data = $request->all();
 
         $data = $request->validate([
@@ -222,6 +228,7 @@ class APIController extends Controller
             'ccp' => 'required',
             'cdp' => 'required',
             'cot' => 'required',
+            'icv' => 'required',
 
         ]);
         

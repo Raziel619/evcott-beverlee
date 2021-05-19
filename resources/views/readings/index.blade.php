@@ -91,6 +91,8 @@
                                 <p>{{$reading->cdp}} kWh</p>
                                 <p><strong>Cumulative Operating Time </strong></p>
                                 <p>{{$reading->cot}} Days</p>
+                                <p><strong>Inverter Capacitor Voltage </strong></p>
+                                <p>{{$reading->icv}} V</p>
                             </div>
                         </div>
                     </div>
