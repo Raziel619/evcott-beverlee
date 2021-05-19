@@ -179,6 +179,12 @@ class APIController extends Controller
         else{$var= hexdec(substr($var,(strpos($var,"7EC 26")+16),2).substr($var,(strpos($var,"7EC 26")+19),2).substr($var,(strpos($var,"7EC 26")+22),2).substr($var,(strpos($var,"7EC 26")+25),2))/10;}
         $request->merge(["cdp"=>$var]);
 
+        //Process Cumulative Operating Time
+        $var= $dx_2101;
+        if(strpos($var,"7EC 27") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 27")+7),2).substr($var,(strpos($var,"7EC 27")+10),2).substr($var,(strpos($var,"7EC 27")+13),2).substr($var,(strpos($var,"7EC 27")+16),2))/86400;}
+        $request->merge(["cot"=>number_format($var,2, '.', ',')]);
+
         //$data = $request->all();
 
         $data = $request->validate([
@@ -215,6 +221,7 @@ class APIController extends Controller
             'cdc' => 'required',
             'ccp' => 'required',
             'cdp' => 'required',
+            'cot' => 'required',
 
         ]);
         

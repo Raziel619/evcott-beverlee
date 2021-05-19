@@ -89,6 +89,8 @@
                                 <p>{{$reading->ccp}} kWh</p>
                                 <p><strong>Cumulative Discharge Power </strong></p>
                                 <p>{{$reading->cdp}} kWh</p>
+                                <p><strong>Cumulative Operating Time </strong></p>
+                                <p>{{$reading->cot}} Days</p>
                             </div>
                         </div>
                     </div>
