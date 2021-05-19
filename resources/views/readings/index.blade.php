@@ -95,6 +95,8 @@
                                 <p>{{$reading->icv}} V</p>
                                 <p><strong>Isolation Resistance </strong></p>
                                 <p>{{$reading->ir}} k&#8486</p>
+                                <p><strong>Battery Max Temperature 2</strong></p>
+                                <p>{{$reading->BatTmpMX2}} &degC</p>
                             </div>
                         </div>
                     </div>
