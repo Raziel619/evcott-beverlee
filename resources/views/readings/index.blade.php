@@ -81,6 +81,8 @@
                                 <p>{{$reading->fan_fbsignal}} </p>
                                 <p><strong>Auxilliary Battery Voltage (OBDII) </strong></p>
                                 <p>{{$reading->obdabv}} V</p>
+                                <p><strong>Cumulative Charge Current </strong></p>
+                                <p>{{$reading->ccc}} Ah</p>
                             </div>
                         </div>
                     </div>
