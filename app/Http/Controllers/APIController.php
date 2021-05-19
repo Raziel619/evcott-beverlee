@@ -191,6 +191,12 @@ class APIController extends Controller
         else{$var= hexdec(substr($var,(strpos($var,"7EC 27")+22),2).substr($var,(strpos($var,"7EC 27")+25),2))/1;}
         $request->merge(["icv"=>$var]);
 
+        //Process Isolation Resistance
+        $var= $dx_2101;
+        if(strpos($var,"7EC 28") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 28")+19),2).substr($var,(strpos($var,"7EC 28")+22),2))/1;}
+        $request->merge(["ir"=>$var]);
+
         //$data = $request->all();
 
         $data = $request->validate([
@@ -229,6 +235,7 @@ class APIController extends Controller
             'cdp' => 'required',
             'cot' => 'required',
             'icv' => 'required',
+            'ir' => 'required',
 
         ]);
         

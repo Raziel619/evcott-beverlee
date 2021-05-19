@@ -93,6 +93,8 @@
                                 <p>{{$reading->cot}} Days</p>
                                 <p><strong>Inverter Capacitor Voltage </strong></p>
                                 <p>{{$reading->icv}} V</p>
+                                <p><strong>Isolation Resistance </strong></p>
+                                <p>{{$reading->ir}} k&#8486</p>
                             </div>
                         </div>
                     </div>
