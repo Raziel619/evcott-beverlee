@@ -97,6 +97,8 @@
                                 <p>{{$reading->ir}} k&#8486</p>
                                 <p><strong>Battery Max Temperature 2</strong></p>
                                 <p>{{$reading->BatTmpMX2}} &degC</p>
+                                <p><strong>Battery Min Temperature 2</strong></p>
+                                <p>{{$reading->BatTmpMI2}} &degC</p>
                             </div>
                         </div>
                     </div>

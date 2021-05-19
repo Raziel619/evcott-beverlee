@@ -197,11 +197,18 @@ class APIController extends Controller
         else{$var= hexdec(substr($var,(strpos($var,"7EC 28")+19),2).substr($var,(strpos($var,"7EC 28")+22),2))/1;}
         $request->merge(["ir"=>$var]);
 
-        //Process Battery Max Temp Data
+        //Process Battery Max Temp 2 Data
         $var= $dx_2105;
         if(strpos($var,"7EC 21") === FALSE){$var= "N/A";}
         else{$var= hexdec(substr($var,(strpos($var,"7EC 21")+25),2));}
         $request->merge(["BatTmpMX2"=>$var]);
+
+        //Process Battery Max Temp 2 Data
+        $var= $dx_2105;
+        if(strpos($var,"7EC 22") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 22")+7),2));}
+        $request->merge(["BatTmpMI2"=>$var]);
+
 
         //$data = $request->all();
 
@@ -243,6 +250,7 @@ class APIController extends Controller
             'icv' => 'required',
             'ir' => 'required',
             'BatTmpMX2' => 'required',
+            'BatTmpMI2' => 'required',
 
         ]);
         
