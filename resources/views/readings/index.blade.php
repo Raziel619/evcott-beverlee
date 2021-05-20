@@ -113,6 +113,19 @@
                                 <p>{{$reading->acp2}} kW</p>
                                 <p><strong>Available Discharge Power 2</strong></p>
                                 <p>{{$reading->adp2}} kW</p>
+                                <p><strong>Battery Cell Voltage Deviation</strong></p>
+                                <p>{{$reading->bcvd}} V</p>
+                                <p><strong>Quick Charge Normal Status</strong></p>
+                                <p>{{$reading->qcns}}</p>
+                                <p><strong>Battery Module 10 Temperature</strong></p>
+                                <p>{{$reading->bmt10}} &degC</p>
+                                <p><strong>Airbag H/wire Duty</strong></p>
+                                <p>{{$reading->abwd}} %</p>
+                                <p><strong>Battery Heater Temperature 1</strong></p>
+                                <p>{{$reading->bht1}} &degC</p>
+                                <p><strong>Battery Heater Temperature 2</strong></p>
+                                <p>{{$reading->bht2}} &degC</p>
+
                             </div>
                         </div>
                     </div>

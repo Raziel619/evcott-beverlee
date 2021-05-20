@@ -251,6 +251,36 @@ class APIController extends Controller
         else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+7),2).substr($var,(strpos($var,"7EC 23")+10),2))/100;}
         $request->merge(["adp2"=>$var]);
 
+        //Process Battery Cell Voltage Deviation Data
+        $var= $dx_2105;
+        if(strpos($var,"7EC 23") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+13),2));}
+        $request->merge(["bcvd"=>$var]);
+
+        //Process Quick Charge Normal Status Data
+        $var= $dx_2105;
+        if(strpos($var,"7EC 23") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+16),2));}
+        $request->merge(["qcns"=>$var]);
+
+        //Process Airbag H/wire Duty Data
+        $var= $dx_2105;
+        if(strpos($var,"7EC 23") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+19),2));}
+        $request->merge(["abwd"=>$var]);
+
+        //Process Battery Heater Temperature 1 Data
+        $var= $dx_2105;
+        if(strpos($var,"7EC 23") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+22),2));}
+        $request->merge(["bht1"=>$var]);
+
+        //Process Battery Heater Temperature 2 Data
+        $var= $dx_2105;
+        if(strpos($var,"7EC 23") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+25),2));}
+        $request->merge(["bht2"=>$var]);
+
 
         //$data = $request->all();
 
@@ -300,6 +330,11 @@ class APIController extends Controller
             'bmt10' => 'required',
             'acp2' => 'required',
             'adp2' => 'required',
+            'bcvd' => 'required',
+            'qcns' => 'required',
+            'abwd' => 'required',
+            'bht1' => 'required',
+            'bht2' => 'required',
 
         ]);
         
