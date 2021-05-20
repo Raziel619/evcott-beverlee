@@ -125,6 +125,14 @@
                                 <p>{{$reading->bht1}} &degC</p>
                                 <p><strong>Battery Heater Temperature 2</strong></p>
                                 <p>{{$reading->bht2}} &degC</p>
+                                <p><strong>SOH (Max Deterioration)</strong></p>
+                                <p>{{$reading->soh}} %</p>
+                                <p><strong>Max Deterioration Cell no.</strong></p>
+                                <p>{{$reading->mdc}}</p>
+                                <p><strong>Min Deterioration</strong></p>
+                                <p>{{$reading->md}} %</p>
+                                <p><strong>Min Deterioration Cell no.</strong></p>
+                                <p>{{$reading->midc}}</p>
 
                             </div>
                         </div>

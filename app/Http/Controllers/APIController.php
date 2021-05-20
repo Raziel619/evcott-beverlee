@@ -281,6 +281,29 @@ class APIController extends Controller
         else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+25),2));}
         $request->merge(["bht2"=>$var]);
 
+        //Process State of Health / Max Deterioration Data
+        $var= $dx_2105;
+        if(strpos($var,"7EC 24") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 24")+7),2).substr($var,(strpos($var,"7EC 24")+10),2))/10;}
+        $request->merge(["soh"=>$var]);
+
+        //Process Max Deterioration Cell no. Data
+        $var= $dx_2105;
+        if(strpos($var,"7EC 24") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 24")+13),2));}
+        $request->merge(["mdc"=>$var]);
+
+        //Process Min Deterioration Data
+        $var= $dx_2105;
+        if(strpos($var,"7EC 24") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 24")+16),2).substr($var,(strpos($var,"7EC 24")+19),2))/10;}
+        $request->merge(["md"=>$var]);
+
+        //Process Min Deterioration Cell no. Data
+        $var= $dx_2105;
+        if(strpos($var,"7EC 24") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 24")+22),2));}
+        $request->merge(["midc"=>$var]);
 
         //$data = $request->all();
 
@@ -335,6 +358,10 @@ class APIController extends Controller
             'abwd' => 'required',
             'bht1' => 'required',
             'bht2' => 'required',
+            'soh' => 'required',
+            'mdc' => 'required',
+            'md' => 'required',
+            'midc' => 'required',
 
         ]);
         
