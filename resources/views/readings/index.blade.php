@@ -109,6 +109,10 @@
                                 <p>{{$reading->bmt9}} &degC</p>
                                 <p><strong>Battery Module 10 Temperature</strong></p>
                                 <p>{{$reading->bmt10}} &degC</p>
+                                <p><strong>Available Charge Power 2</strong></p>
+                                <p>{{$reading->acp2}} kW</p>
+                                <p><strong>Available Discharge Power 2</strong></p>
+                                <p>{{$reading->adp2}} kW</p>
                             </div>
                         </div>
                     </div>
