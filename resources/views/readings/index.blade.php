@@ -165,8 +165,39 @@
                                 <p>{{$reading->bcv15}} V</p>
                                 <p><strong>Cell Voltage 16</strong></p>
                                 <p>{{$reading->bcv16}} V</p>
+                                <p><strong>Cell Voltage 17</strong></p>
+                                <p>{{$reading->bcv17}} V</p>
+                                <p><strong>Cell Voltage 18</strong></p>
+                                <p>{{$reading->bcv18}} V</p>
+                                <p><strong>Cell Voltage 19</strong></p>
+                                <p>{{$reading->bcv19}} V</p>
+                                <p><strong>Cell Voltage 20</strong></p>
+                                <p>{{$reading->bcv20}} V</p>
+                                <p><strong>Cell Voltage 21</strong></p>
+                                <p>{{$reading->bcv21}} V</p>
+                                <p><strong>Cell Voltage 22</strong></p>
+                                <p>{{$reading->bcv22}} V</p>
+                                <p><strong>Cell Voltage 23</strong></p>
+                                <p>{{$reading->bcv23}} V</p>
+                                <p><strong>Cell Voltage 24</strong></p>
+                                <p>{{$reading->bcv24}} V</p>
+                                <p><strong>Cell Voltage 25</strong></p>
+                                <p>{{$reading->bcv25}} V</p>
+                                <p><strong>Cell Voltage 26</strong></p>
+                                <p>{{$reading->bcv26}} V</p>
+                                <p><strong>Cell Voltage 27</strong></p>
+                                <p>{{$reading->bcv27}} V</p>
+                                <p><strong>Cell Voltage 28</strong></p>
+                                <p>{{$reading->bcv28}} V</p>
+                                <p><strong>Cell Voltage 29</strong></p>
+                                <p>{{$reading->bcv29}} V</p>
+                                <p><strong>Cell Voltage 30</strong></p>
+                                <p>{{$reading->bcv30}} V</p>
+                                <p><strong>Cell Voltage 31</strong></p>
+                                <p>{{$reading->bcv31}} V</p>
+                                <p><strong>Cell Voltage 32</strong></p>
+                                <p>{{$reading->bcv32}} V</p>
                                 
-
                             </div>
                         </div>
                     </div>

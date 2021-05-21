@@ -401,6 +401,102 @@ class APIController extends Controller
         else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+10),2))/50;}
         $request->merge(["bcv16"=>$var]);
 
+        //Process Battery Cell Voltage 17 Data
+        $var= $dx_2102;
+        if(strpos($var,"7EC 23") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+13),2))/50;}
+        $request->merge(["bcv17"=>$var]);
+
+        //Process Battery Cell Voltage 18 Data
+        $var= $dx_2102;
+        if(strpos($var,"7EC 23") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+16),2))/50;}
+        $request->merge(["bcv18"=>$var]);
+
+        //Process Battery Cell Voltage 19 Data
+        $var= $dx_2102;
+        if(strpos($var,"7EC 23") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+19),2))/50;}
+        $request->merge(["bcv19"=>$var]);
+
+        //Process Battery Cell Voltage 20 Data
+        $var= $dx_2102;
+        if(strpos($var,"7EC 23") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+22),2))/50;}
+        $request->merge(["bcv20"=>$var]);
+
+        //Process Battery Cell Voltage 21 Data
+        $var= $dx_2102;
+        if(strpos($var,"7EC 23") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 23")+25),2))/50;}
+        $request->merge(["bcv21"=>$var]);
+
+        //Process Battery Cell Voltage 22 Data
+        $var= $dx_2102;
+        if(strpos($var,"7EC 24") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 24")+7),2))/50;}
+        $request->merge(["bcv22"=>$var]);
+
+        //Process Battery Cell Voltage 23 Data
+        $var= $dx_2102;
+        if(strpos($var,"7EC 24") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 24")+10),2))/50;}
+        $request->merge(["bcv23"=>$var]);
+
+        //Process Battery Cell Voltage 24 Data
+        $var= $dx_2102;
+        if(strpos($var,"7EC 24") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 24")+13),2))/50;}
+        $request->merge(["bcv24"=>$var]);
+
+        //Process Battery Cell Voltage 25 Data
+        $var= $dx_2102;
+        if(strpos($var,"7EC 24") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 24")+16),2))/50;}
+        $request->merge(["bcv25"=>$var]);
+
+        //Process Battery Cell Voltage 26 Data
+        $var= $dx_2102;
+        if(strpos($var,"7EC 24") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 24")+19),2))/50;}
+        $request->merge(["bcv26"=>$var]);
+
+        //Process Battery Cell Voltage 27 Data
+        $var= $dx_2102;
+        if(strpos($var,"7EC 24") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 24")+22),2))/50;}
+        $request->merge(["bcv27"=>$var]);
+
+        //Process Battery Cell Voltage 28 Data
+        $var= $dx_2102;
+        if(strpos($var,"7EC 24") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 24")+25),2))/50;}
+        $request->merge(["bcv28"=>$var]);
+
+        //Process Battery Cell Voltage 29 Data
+        $var= $dx_2102;
+        if(strpos($var,"7EC 25") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 25")+7),2))/50;}
+        $request->merge(["bcv29"=>$var]);
+
+        //Process Battery Cell Voltage 30 Data
+        $var= $dx_2102;
+        if(strpos($var,"7EC 25") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 25")+10),2))/50;}
+        $request->merge(["bcv30"=>$var]);
+
+        //Process Battery Cell Voltage 31 Data
+        $var= $dx_2102;
+        if(strpos($var,"7EC 25") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 25")+13),2))/50;}
+        $request->merge(["bcv31"=>$var]);
+
+        //Process Battery Cell Voltage 32 Data
+        $var= $dx_2102;
+        if(strpos($var,"7EC 25") === FALSE){$var= "N/A";}
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 25")+16),2))/50;}
+        $request->merge(["bcv32"=>$var]);
+
 
         //$data = $request->all();
 
@@ -475,6 +571,22 @@ class APIController extends Controller
             'bcv14' => 'required',
             'bcv15' => 'required',
             'bcv16' => 'required',
+            'bcv17' => 'required',
+            'bcv18' => 'required',
+            'bcv19' => 'required',
+            'bcv20' => 'required',
+            'bcv21' => 'required',
+            'bcv22' => 'required',
+            'bcv23' => 'required',
+            'bcv24' => 'required',
+            'bcv25' => 'required',
+            'bcv26' => 'required',
+            'bcv27' => 'required',
+            'bcv28' => 'required',
+            'bcv29' => 'required',
+            'bcv30' => 'required',
+            'bcv31' => 'required',
+            'bcv32' => 'required',
 
         ]);
         
