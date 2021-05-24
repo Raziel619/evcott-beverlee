@@ -25,6 +25,8 @@
                         <div id="collapse{{$reading->id}}" class="collapse" aria-labelledby="heading{{$reading->id}}"
                             data-parent="#accordion">
                             <div class="card-body">
+                                <p><strong>PI Zero Status | Online=1 Offline=0</strong></p>
+                                <p>{{$reading->pi0_status}}</p>
                                 <p><strong>CMD_2101</strong></p>
                                 <p>{{$reading->cmd_2101}}</p>
                                 <p><strong>CMD_2102</strong></p>

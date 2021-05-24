@@ -13,6 +13,8 @@ $txt4 = "['7EA 10 16 61 01 FF E0 00 00 \n', '7EB 10 1E 61 01 00 00 03 FF \n', '7
 
 $txt5 = "['7EA 10 16 61 01 FF E0 00 00 \n', '7EB 10 1E 61 01 00 00 03 FF \n', '7ED 10 33 61 01 FF FF FB C0 \n', '7EC 10 3D 61 01 FF FF FF FF \n', '7EE 03 7F 21 12 \n', '7EA 21 09 21 5A 47 06 39 03 \n', '7EB 21 0C 38 00 69 95 84 38 \n', '7ED 21 01 03 42 03 4B 04 0A \n', '7EC 21 A6 26 48 26 48 03 00 \n', '7EA 22 00 00 00 00 C6 74 34 \n', '7EB 22 00 E4 0C 3B 00 31 02 \n', '7ED 22 00 00 92 00 36 01 BD \n', '7EC 22 15 0E EE 1E 1D 1D 1D \n', '7EA 23 04 20 00 00 00 00 00 \n', '7EB 23 31 04 85 38 00 00 30 \n', '7ED 23 05 B1 21 00 00 00 00 \n', '7EC 23 1D 1E 1D 00 1E C7 47 \n', '7EB 24 00 D0 FF 00 00 00 00 \n', '7ED 24 00 00 00 00 60 00 00 \n', '7EC 24 C6 01 00 00 8E 00 01 \n', '7ED 25 00 00 01 F3 00 7F 03 \n', '7EC 25 9A 40 00 01 98 F7 00 \n', '7ED 26 62 00 00 00 00 00 00 \n', '7EC 26 00 95 B8 00 00 92 E2 \n', '7ED 27 05 AA 00 00 00 00 00 \n', '7EC 27 00 6E C5 49 0D 01 7E \n', '7EC 28 06 A4 00 00 03 E8 00 \n']";
 
+$txt6 = "2101 7ED 10 33 61 01 FF FF FB C0 7EB 10 1E 61 01 00 00 03 FF 7EA 10 16 61 01 FF E0 00 00 7EC 10 3D 61 01 FF FF FF FF 7EE 03 7F 21 12 7ED 21 00 8D 5E 87 D7 2B A5 7EB 21 08 38 01 14 88 C6 32 7EA 21 09 21 10 63 06 3B 03 7EC 21 4E 26 48 26 48 A3 FF 7ED 22 01 60 A9 02 4A 00 93 7EB 22 00 00 00 0A 00 10 02 7EA 22 00 00 00 00 54 69 00 7EC 22 E4 0D 98 21 20 1F 20 7ED 23 05 0C 23 10 20 00 C8 7EB 23 27 04 A9 32 00 00 30 7EA 23 07 20 00 00 00 00 00 7EC 23 20 1F 1F 00 1E B5 0C 7ED 24 04 68 00 CA 76 00 1E 7EB 24 00 D0 FF 00 00 00 00 7EC 24 B5 01 02 32 81 00 02 7ED 25 00 1C 01 F3 88 4F 04 7EC 25 73 34 00 02 73 99 00 7ED 26 02 00 1A 00 3C 03 E7 7EC 26 00 E5 1D 00 00 E1 A9 7ED 27 05 18 01 00 00 00 00 7EC 27 00 B1 61 AB 09 01 5C 7EC 28 00 00 00 00 03 E8 00 >"; // Offline Logged Data
+
 echo "<h2>" . $txt1 . "</h2>";
 echo "Study to code!!! "."<br>" . $txt2 . "<br>";
 echo $x + $y. "<br>";
@@ -72,7 +74,17 @@ echo "RPM = ". hexdec(substr($txt4,855,2) . substr($txt4,858,2)). "<br>";
 echo substr($txt5,(strpos($txt5,"7EC 21")+25),2).substr($txt5,(strpos($txt5,"7EC 22")+7),2)."<br>";
 $var= hexdec(substr($txt5,(strpos($txt5,"7EC 21")+25),2).substr($txt5,(strpos($txt5,"7EC 22")+7),2))/10;
 echo "Battery Current = ".$var. "<br>";
+echo "<br>";
+echo "<br>";
+echo $txt6 . "<br>";// Online Logged Data
+echo "<br>";
+echo "<br>";
+echo substr($txt5, 0,1). "<br>";
+echo substr($txt6, 0,1);
+echo "<br>";
+echo "<br>";
 
-
+if (substr($txt6, 0,1) === "["){ echo "Offline";} // Assign Value of 0
+else{echo "Online";} // Assign Value of 1
 
 ?>

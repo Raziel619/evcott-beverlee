@@ -881,6 +881,12 @@ class APIController extends Controller
         else{$var= hexdec(substr($var,(strpos($var,"7EC 25")+16),2))/50;}
         $request->merge(["bcv96"=>$var]);
 
+        //Determine if Data was Logged while PI Zero was Online/Offline
+        $var= $dx_2101;
+        if (substr($var, 0,1) === "["){$var= "0";}  // Assign Value of 0 for Offline
+        else{$var= "1";}                            // Assign Value of 1 for Online
+        $request->merge(["pi0_status"=>$var]);
+
         //$data = $request->all();
 
         $data = $request->validate([
@@ -1034,6 +1040,7 @@ class APIController extends Controller
             'bcv94' => 'required',
             'bcv95' => 'required',
             'bcv96' => 'required',
+            'pi0_status' => 'required',
 
         ]);
         
