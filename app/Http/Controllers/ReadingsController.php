@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Reading;
+use App\Exports\DownloadReadingsExport;
+use Excel;
 
 class ReadingsController extends Controller
 {
@@ -83,5 +85,15 @@ class ReadingsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function exportReadingsIntoExcel()
+    {
+        return Excel::download(new DownloadReadingsExport,'readingsdatabase.xlsx');
+    }
+
+    public function exportReadingsIntoCSV()
+    {
+        return Excel::download(new DownloadReadingsExport,'readingsdatabase.csv');
     }
 }

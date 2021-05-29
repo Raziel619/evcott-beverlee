@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReadingsController;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,11 @@ Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
 //Resourceful routes
 Route::resource('readings', ReadingsController::class);
+//Route::get('/export-excel',[EmployeeController::class,'exportIntoExcel'])->name('excel.dl');
+//Route::get('/export-csv',[EmployeeController::class,'exportIntoCSV'])->name('csv.dl');
+Route::get('/add-employee',[EmployeeController::class,'addEmployee']);
+Route::get('/export-excel',[ReadingsController::class,'exportReadingsIntoExcel'])->name('excel.dl');
+Route::get('/export-csv',[ReadingsController::class,'exportReadingsIntoCSV'])->name('csv.dl');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
@@ -37,4 +43,6 @@ Route::group(['middleware' => 'auth'], function () {
 	 Route::get('table-list', function () {return view('pages.tables');})->name('table');
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 });
+
+
 
