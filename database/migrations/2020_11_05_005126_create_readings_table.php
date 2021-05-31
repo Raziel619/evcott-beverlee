@@ -23,6 +23,7 @@ class CreateReadingsTable extends Migration
             $table->longText('cmd_2103');
             $table->longText('cmd_2104');
             $table->longText('cmd_2105');
+            
         });
     }
 
