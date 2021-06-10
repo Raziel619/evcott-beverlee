@@ -11,7 +11,7 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-6">
-                    <a href="{{route('readings.index')}}" class="btn btn-success mt-4 text-white">View Sample Readings</a>
+                    <a href="{{route('readings.index')}}" class="btn btn-success mt-4 text-white">View EV 1 Readings</a>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -22,6 +22,11 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-6">
                     <a href="{{route('csv.dl')}}" class="btn btn-success mt-4 text-white">Download Database .csv</a>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 col-md-6">
+                    <a href="{{route('readings.index')}}" class="btn btn-success mt-4 text-white">View EV 2 Readings</a>
                     </div>
                 </div>
             </div>
