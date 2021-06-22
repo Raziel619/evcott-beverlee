@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Reading;
+use App\Models\Reading2;
 use App\Exports\DownloadReadingsExport;
 use Excel;
 
@@ -18,6 +19,13 @@ class ReadingsController extends Controller
     {
         $readings = Reading::orderBy('id', 'desc')->paginate(15);
         return view('readings.index')
+            ->withReadings($readings);
+    }
+
+    public function index2()
+    {
+        $readings = Reading2::orderBy('id', 'desc')->paginate(15);
+        return view('readings.index2')
             ->withReadings($readings);
     }
 

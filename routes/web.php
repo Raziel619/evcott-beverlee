@@ -32,6 +32,7 @@ Route::resource('readings', ReadingsController::class);
 Route::get('/add-employee',[EmployeeController::class,'addEmployee']);
 Route::get('/export-excel',[ReadingsController::class,'exportReadingsIntoExcel'])->name('excel.dl');
 Route::get('/export-csv',[ReadingsController::class,'exportReadingsIntoCSV'])->name('csv.dl');
+Route::get('/reading2', 'App\Http\Controllers\ReadingsController@index2')->name('reading2');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
