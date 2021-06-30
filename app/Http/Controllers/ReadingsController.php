@@ -99,12 +99,15 @@ class ReadingsController extends Controller
 
     public function exportReadingsIntoExcel()
     {
+        // Method 1
         // Mattwebsite Implementation
         //return Excel::download(new DownloadReadingsExport,'readingsdatabase.xlsx');
        
+        // Method 2       
         // Fast-Excel Implementation
        //return (new FastExcel(Reading::all()))->download('readingsdatabase.xlsx');
 
+        // Method 3
         // Fast-Excel with Generators Implementation
        function ReadingGenerator(){
         foreach (Reading::cursor() as $reading){ 
