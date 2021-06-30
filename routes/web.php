@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReadingsController;
 use App\Http\Controllers\EmployeeController;
-
+use App\Http\Controllers\FrontendController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +33,7 @@ Route::get('/add-employee',[EmployeeController::class,'addEmployee']);
 Route::get('/export-excel',[ReadingsController::class,'exportReadingsIntoExcel'])->name('excel.dl');
 Route::get('/export-csv',[ReadingsController::class,'exportReadingsIntoCSV'])->name('csv.dl');
 Route::get('/reading2', 'App\Http\Controllers\ReadingsController@index2')->name('reading2');
+Route::get('/live',[FrontendController::class,'live'])->name('view.live');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
