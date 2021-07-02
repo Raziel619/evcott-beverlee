@@ -1,5 +1,5 @@
 @extends('layouts.app', ['class' => 'bg-default'])
-
+<meta http-equiv="refresh" content="10">
 @section('content')
 <div class="header bg-gradient-primary py-7 py-lg-8">
     <div class="container">
