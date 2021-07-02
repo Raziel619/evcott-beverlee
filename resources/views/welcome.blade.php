@@ -16,17 +16,17 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-6">
+                    <a href="{{route('view.live')}}" class="btn btn-success mt-4 text-white">EV 1 Live Data</a>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 col-md-6">
                     <a href="{{route('excel.dl')}}" class="btn btn-success mt-4 text-white">Download Database .xlsx</a>
                     </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-6">
                     <a href="{{route('csv.dl')}}" class="btn btn-success mt-4 text-white">Download Database .csv</a>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-5 col-md-6">
-                    <a href="{{route('view.live')}}" class="btn btn-success mt-4 text-white">Dashboard Test</a>
                     </div>
                 </div>
                 <div class="row justify-content-center">
