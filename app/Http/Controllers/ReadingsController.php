@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Reading;
+use App\Models\Reading2;
 use App\Exports\DownloadReadingsExport;
+use Rap2hpoutre\FastExcel\FastExcel;
 use Excel;
+
 
 class ReadingsController extends Controller
 {
@@ -18,6 +21,13 @@ class ReadingsController extends Controller
     {
         $readings = Reading::orderBy('id', 'desc')->paginate(15);
         return view('readings.index')
+            ->withReadings($readings);
+    }
+
+    public function index2()
+    {
+        $readings = Reading2::orderBy('id', 'desc')->paginate(15);
+        return view('readings.index2')
             ->withReadings($readings);
     }
 
@@ -89,11 +99,38 @@ class ReadingsController extends Controller
 
     public function exportReadingsIntoExcel()
     {
-        return Excel::download(new DownloadReadingsExport,'readingsdatabase.xlsx');
+        // Method 1
+        // Mattwebsite Implementation
+        //return Excel::download(new DownloadReadingsExport,'readingsdatabase.xlsx');
+       
+        // Method 2       
+        // Fast-Excel Implementation
+       //return (new FastExcel(Reading::all()))->download('readingsdatabase.xlsx');
+
+        // Method 3
+        // Fast-Excel with Generators Implementation
+       function ReadingGenerator(){
+        foreach (Reading::cursor() as $reading){ 
+            yield $reading;
+        }
+       }
+
+       return (new FastExcel(ReadingGenerator()))->download('readingsdatabase.xlsx');
     }
 
     public function exportReadingsIntoCSV()
     {
-        return Excel::download(new DownloadReadingsExport,'readingsdatabase.csv');
+        // Mattwebsite Implementation
+        //return Excel::download(new DownloadReadingsExport,'readingsdatabase.csv');
+
+        // Fast-Excel with Generators Implementation
+       function ReadingGenerator(){
+        foreach (Reading::cursor() as $reading){ 
+            yield $reading;
+        }
+       }
+
+       return (new FastExcel(ReadingGenerator()))->download('readingsdatabase.csv');
+
     }
 }
