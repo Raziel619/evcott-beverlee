@@ -182,9 +182,11 @@ class APIController extends Controller
         //Process Cumulative Operating Time
         $var= $dx_2101;
         if(strpos($var,"7EC 27") === FALSE){$var= "N/A";}
-        else{$var= hexdec(substr($var,(strpos($var,"7EC 27")+7),2).substr($var,(strpos($var,"7EC 27")+10),2).substr($var,(strpos($var,"7EC 27")+13),2).substr($var,(strpos($var,"7EC 27")+16),2))/86400;}
-        $request->merge(["cot"=>number_format($var,2, '.', ',')]);
-
+        else{$var= hexdec(substr($var,(strpos($var,"7EC 27")+7),2).substr($var,(strpos($var,"7EC 27")+10),2).substr($var,(strpos($var,"7EC 27")+13),2).substr($var,(strpos($var,"7EC 27")+16),2))/86400;
+             $var= number_format($var,2, '.', ',');
+            }
+        $request->merge(["cot"=>$var]);
+        
         //Process Inverter Capacitor Voltage
         $var= $dx_2101;
         if(strpos($var,"7EC 27") === FALSE){$var= "N/A";}
