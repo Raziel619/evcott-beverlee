@@ -39,7 +39,8 @@
 
         <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        
+        <script src="https://unpkg.com/echarts/dist/echarts.min.js"></script>
+        <script src="https://unpkg.com/@chartisan/echarts/dist/chartisan_echarts.js"></script>
         @stack('js')
         
         <!-- Argon JS -->

@@ -21,11 +21,6 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-6">
-                    <a href="{{route('excel.dl')}}" class="btn btn-success mt-4 text-white">Download Database .xlsx</a>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-5 col-md-6">
                     <a href="{{route('csv.dl')}}" class="btn btn-success mt-4 text-white">Download Database .csv</a>
                     </div>
                 </div>
@@ -34,6 +29,13 @@
                     <a href="{{route('reading2')}}" class="btn btn-success mt-4 text-white">View EV 2 Readings</a>
                     </div>
                 </div>
+                {{--
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 col-md-6">
+                    <a href="{{route('view.graph')}}" class="btn btn-success mt-4 text-white">Plot Graph</a>
+                    </div>
+                </div>
+                --}}
             </div>
         </div>
         <div class="separator separator-bottom separator-skew zindex-100">
