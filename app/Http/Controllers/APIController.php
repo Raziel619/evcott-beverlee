@@ -17,6 +17,10 @@ class APIController extends Controller
         $dx_2104=$request->input('cmd_2104');
         $dx_2105=$request->input('cmd_2105');
 
+        //Set ev_id=1 for Sanjay EV
+        $var= "1";
+        $request->merge(["ev_id"=>$var]);
+
         //Process SOC Data
         $var= $dx_2105;
         if(strpos($var,"7EC 24") === FALSE){$var= "N/A";}
@@ -1043,6 +1047,7 @@ class APIController extends Controller
             'bcv95' => 'required',
             'bcv96' => 'required',
             'pi0_status' => 'required',
+            'ev_id' => 'required',
 
         ]);
         
