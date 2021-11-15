@@ -26,7 +26,7 @@ class ReadingsController extends Controller
 
     public function index2()
     {
-        $readings = Reading2::orderBy('id', 'desc')->paginate(15);
+        $readings = Reading::orderBy('id', 'desc')->where('ev_id','=','2')->paginate(15);
         return view('readings.index2')
             ->withReadings($readings);
     }

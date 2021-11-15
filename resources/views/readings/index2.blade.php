@@ -18,7 +18,7 @@
                                 <button class="btn btn-link" data-toggle="collapse"
                                     data-target="#collapse{{$reading->id}}" aria-expanded="true"
                                     aria-controls="collapse{{$reading->id}}">
-                                    ID: {{$reading->id}} | Time: {{$reading->time}} | SOC: {{$reading->soc}} %
+                                    ID: {{$reading->id}} |EV: {{$reading->ev_id}}| Time: {{$reading->time}} | SOC: {{$reading->soc}} %
                                 </button>
                             </h5>
                         </div>

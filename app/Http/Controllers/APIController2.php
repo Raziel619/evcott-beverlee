@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Reading2;
+use App\Models\Reading;
 
 
 
@@ -16,6 +16,10 @@ class APIController2 extends Controller
         $dx_2103=$request->input('cmd_2103');
         $dx_2104=$request->input('cmd_2104');
         $dx_2105=$request->input('cmd_2105');
+
+        //Set ev_id=2 for Sharma EV
+        $var= "2";
+        $request->merge(["ev_id"=>$var]);
 
         //Process SOC Data
         $var= $dx_2105;
@@ -1043,10 +1047,11 @@ class APIController2 extends Controller
             'bcv95' => 'required',
             'bcv96' => 'required',
             'pi0_status' => 'required',
+            'ev_id' => 'required',
 
         ]);
         
-        $reading = new Reading2;
+        $reading = new Reading;
         $reading->fill($data);
         $reading->save();
         return $reading;
