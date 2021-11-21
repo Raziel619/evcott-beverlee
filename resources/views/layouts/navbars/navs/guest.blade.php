@@ -26,6 +26,13 @@
             <!-- Navbar items -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
+                    <a class="nav-link nav-link-icon" href="{{ route('landing') }}">
+                        <i class="ni ni-shop"></i>
+                        <span class="nav-link-inner--text">{{ __('Home') }}</span>
+                    </a>
+                </li>
+                {{--
+                <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="{{ route('home') }}">
                         <i class="ni ni-planet"></i>
                         <span class="nav-link-inner--text">{{ __('Dashboard') }}</span>
@@ -49,6 +56,7 @@
                         <span class="nav-link-inner--text">{{ __('Profile') }}</span>
                     </a>
                 </li>
+                --}}
             </ul>
         </div>
     </div>

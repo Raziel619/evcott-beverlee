@@ -35,9 +35,12 @@ Route::resource('readings', ReadingsController::class);
 Route::get('/export-csv',[ReadingsController::class,'exportReadingsIntoCSV'])->name('csv.dl');
 Route::get('/reading2', 'App\Http\Controllers\ReadingsController@index2')->name('reading2');
 Route::get('/live',[FrontendController::class,'live'])->name('view.live');
-//Route::get('/graph','App\Http\Controllers\test@apple')->name('view.graph');
+Route::get('/graph','App\Http\Controllers\test@index')->name('view.graph');
 //Route::get('/update','App\Http\Controllers\UpdateController@update_records');
-//Route::post('/plot','App\Http\Controllers\test@plot');
+Route::post('/plot','App\Http\Controllers\test@plot');
+Route::post('/dashplot','App\Http\Controllers\DashboardController@dashplot');
+Route::get('/dashboard','App\Http\Controllers\DashboardController@index')->name('view.dashboard');
+
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
